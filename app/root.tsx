@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-createEmotionCache({ key: 'mantine', prepend: false });
+const myCache = createEmotionCache({ key: 'mantine', prepend: false });
 
 export default function App() {
   return (
@@ -41,7 +41,7 @@ function MantineTheme({ children }: { children: React.ReactNode }) {
 
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-      <MantineProvider theme={{ colorScheme }} withNormalizeCSS withGlobalStyles>
+      <MantineProvider emotionCache={myCache} theme={{ colorScheme }} withNormalizeCSS withGlobalStyles>
         {children}
       </MantineProvider>
     </ColorSchemeProvider>
