@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-createEmotionCache({ key: 'mantine' });
+createEmotionCache({ key: 'mantine', prepend: false });
 
 export default function App() {
   return (
