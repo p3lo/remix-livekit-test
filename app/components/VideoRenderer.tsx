@@ -2,7 +2,7 @@ import React from 'react';
 import type { Track } from 'livekit-client';
 import type { Property } from 'csstype';
 import type { CSSProperties } from 'react';
-import { AspectRatio } from '@mantine/core';
+import { AspectRatio, MediaQuery } from '@mantine/core';
 // import ReactPlayer from 'react-player';
 
 export interface VideoRendererProps {
@@ -88,9 +88,16 @@ function VideoRenderer({
   return (
     <>
       <div className="w-[100%] 2xl:w-[50%] xl:w-[60%] lg:w-[70%] md:w-[80%]">
-        <AspectRatio ratio={16 / 9} mx="auto">
-          <video ref={ref} style={style} className={className} autoPlay controls />
-        </AspectRatio>
+        <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+          <AspectRatio ratio={16 / 9} mx="auto">
+            <video ref={ref} style={style} className={className} autoPlay controls />
+          </AspectRatio>
+        </MediaQuery>
+        <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+          <AspectRatio ratio={9 / 16} mx="auto">
+            <video ref={ref} style={style} className={className} autoPlay controls />
+          </AspectRatio>
+        </MediaQuery>
         {/* <ReactPlayer playing controls url={stream as MediaStream} /> */}
       </div>
     </>
