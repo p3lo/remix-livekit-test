@@ -87,10 +87,8 @@ function VideoRenderer({
 
   return (
     <>
-      <div className="w-[100%] 2xl:w-[50%] xl:w-[60%] lg:w-[70%] md:w-[80%]">
-        <AspectRatio ratio={16 / 9} mx="auto">
-          <video ref={ref} style={style} className={className} autoPlay controls />
-        </AspectRatio>
+      <div className="w-[100%] 2xl:w-[50%] xl:w-[60%] lg:w-[70%] md:w-[80%] aspect-[9/16] md:aspect-[16/9]">
+        <video ref={ref} style={style} className={className} autoPlay controls />
 
         {/* <ReactPlayer playing controls url={stream as MediaStream} /> */}
       </div>
