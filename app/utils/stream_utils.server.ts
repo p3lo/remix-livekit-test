@@ -1,6 +1,5 @@
 import { LIVEKIT_API, LIVEKIT_SECRET, LIVEKIT_SERVER } from '../constants/index.server';
 import { AccessToken, RoomServiceClient } from 'livekit-server-sdk';
-import { json } from '@remix-run/node';
 
 export async function getAccessToken(participantName: string, roomName: string) {
   const at = new AccessToken(LIVEKIT_API, LIVEKIT_SECRET, {

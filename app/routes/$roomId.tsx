@@ -4,7 +4,7 @@ import { json } from '@remix-run/node';
 import { getAudioDevices, getVideoDevices } from '../utils/stream_utils';
 import { NativeSelect, Button } from '@mantine/core';
 import type { LocalVideoTrack } from 'livekit-client';
-import { createLocalVideoTrack, Room } from 'livekit-client';
+import { createLocalVideoTrack } from 'livekit-client';
 
 import { LIVEKIT_SERVER } from '../constants/index.server';
 import { useLoaderData } from '@remix-run/react';
